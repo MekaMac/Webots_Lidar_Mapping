@@ -330,14 +330,12 @@ def robotControl(vL, vR, isGoal, d, path, current_time):
         right_motor.setVelocity(0)
     #*******************************************************************************
     
-    #Dynamic Window Aproac için otonom sürüş sistemi
-    if(manualControl["active"] == False):
-        
+    #otonom sürüş sistemi
+    if(manualControl["active"] == False):        
         if(isGoal == True or current_time < 3): # FAST SLAM Başlangıçta 3 saniye beklesin diye "current_time < 3" eklendi.
             left_motor.setVelocity(0)
             right_motor.setVelocity(0)
         else:
-            # print("das1")
             left_motor.setVelocity(vL)
             right_motor.setVelocity(vR)
 
